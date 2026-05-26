@@ -107,12 +107,4 @@ After running YOLO on the captured image, the model detected the vehicle success
 
 This confirms that YOLO was successfully installed and executed on Raspberry Pi.
 
-## 8. What I Learned
 
-Through this assignment, I learned how to install YOLO on Raspberry Pi and run object detection using a YOLO model.
-
-I also learned how to create a Python virtual environment, install required Python packages, and use the Raspberry Pi Camera to capture an image.
-
-During the installation process, I encountered a storage-related error. I solved this issue by changing the temporary directory to a folder inside the home directory.
-
-This project helped me understand how Raspberry Pi can be used for computer vision and IoT-based image recognition tasks.
