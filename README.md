@@ -85,16 +85,33 @@ The captured image was saved as `monitor_car.jpg`.
 <img width="2879" height="1711" alt="02_captured_car" src="https://github.com/user-attachments/assets/5c9738e1-2119-4337-bb3c-e681b39373b3" />
 
 
-## 6. YOLO Vehicle Detection
+## 6. YOLO Vehicle Detection Using Python
 
-After capturing the image, I used YOLO to detect the car in the image.
+After capturing the image with the Raspberry Pi Camera, I used a Python script to run YOLO vehicle detection.
+
+The Python code loads the YOLO model, analyzes the captured image, and saves the detection result image.
+
+```python
+from ultralytics import YOLO
+
+model = YOLO("yolo11n.pt")
+
+results = model.predict(
+    source="/home/iotteam2/Pictures/hw6_yolo/monitor_car.jpg",
+    conf=0.25,
+    save=True
+)
+```
+
+The captured image was used as the input image for YOLO detection.
 
 ```bash
 source ~/yolo-env/bin/activate
-yolo predict model=yolo11n.pt source=~/Pictures/hw6_yolo/monitor_car.jpg
+python detect_car.py
 ```
 
-The YOLO model detected the vehicle and saved the detection result image in the `runs/detect/` folder.
+The YOLO model detected the vehicle in the image and saved the detection result.
+
 
 <img width="2872" height="1710" alt="03_yolo_result" src="https://github.com/user-attachments/assets/df617d09-60e8-4438-b8a8-b566be65c371" />
 
